@@ -1,10 +1,11 @@
 import requests
+import streamlit as st
 
-API_KEY = "339a12e2986c2973874900f6012d781c"
-
+# Access API key from secrets
+api_key = st.secrets["default"]["API_KEY"]
 
 def get_data(place, days=None):
-    url = f"http://api.openweathermap.org/data/2.5/forecast?q={place}&appid={API_KEY}"
+    url = f"http://api.openweathermap.org/data/2.5/forecast?q={place}&appid={api_key}"
     response = requests.get(url)
     data = response.json()
     filtered_data = data["list"]

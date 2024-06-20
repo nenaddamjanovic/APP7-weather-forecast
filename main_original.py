@@ -2,8 +2,6 @@ import streamlit as st
 import plotly.express as px
 from backend import get_data
 
-# st.set_page_config(layout="wide")
-
 # Add title, input, slide, selectbox and subheader
 st.title("Weather forecast for next days")
 place = st.text_input("Place: ", value="Pancevo")
@@ -34,7 +32,6 @@ if place:
         sky_conditions = [dict["weather"][0]["main"] for dict in filtered_data]
         image_paths = [images[condition] for condition in sky_conditions]
         dates = [dict["dt_txt"] for dict in filtered_data]
-        print(sky_conditions)
         st.image(image_paths, width=88, caption=dates)
 
 

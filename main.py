@@ -2,8 +2,6 @@ import streamlit as st
 import plotly.express as px
 from backend import get_data
 
-# st.set_page_config(layout="wide")
-
 # Add title, input, slide, selectbox and subheader
 st.title("Weather forecast for next days")
 place = st.text_input("Place: ", value="Pancevo")
