@@ -4,6 +4,7 @@ import streamlit as st
 # Access API key from secrets
 api_key = st.secrets["default"]["API_KEY"]
 
+
 def get_data(place, days=None):
     url = f"http://api.openweathermap.org/data/2.5/forecast?q={place}&appid={api_key}"
     response = requests.get(url)
