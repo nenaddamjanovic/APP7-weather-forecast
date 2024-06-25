@@ -27,14 +27,14 @@ if place:
             # Update the layout for a better design
             figure.update_layout(
                 title={
-                    'text': "Windspeed Over Time",
+                    'text': "Temperature Over Time",
                     'y': 0.9,
                     'x': 0.5,
                     'xanchor': 'center',
                     'yanchor': 'top'
                 },
                 xaxis_title="Date",
-                yaxis_title="Windspeed (km/h)",
+                yaxis_title="Temperature (C)",
                 xaxis=dict(
                     showgrid=True,
                     gridcolor='rgba(200, 200, 200, 0.5)',
