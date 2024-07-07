@@ -1,6 +1,6 @@
 import streamlit as st
 import plotly.express as px
-from backend import get_data
+from backend import get_data, create_db, insert_data
 import plotly.graph_objects as go
 
 # Add title, input, slide, selectbox and subheader
@@ -15,8 +15,12 @@ st.header(f"{option} for the next {days} days in {place.title()}")
 
 if place:
     try:
+        # Create the database and table if not exists
+        create_db()
         # Get the temp/sky data
         filtered_data = get_data(place, days)
+        # Insert the data into the database
+        insert_data(filtered_data, place)
 
         # Create temperature plot
         if option == "Temperature":
